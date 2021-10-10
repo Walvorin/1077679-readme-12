@@ -61,8 +61,7 @@ $user_name = 'Arman'; // укажите здесь ваше имя
                     </li>
                 </ul>
                 <!-- здесь должен быть PHP код, который показывает следующий тег по условию -->
-                <?php endif; ?>
-                <?php if ($is_auth == 1): ?>
+                <!-- Я подумал это специально было создано чтобы запутать учеников, вначале я подумал что логично обернуть весь тег nav, но потом побоялся что я могу ошибаться -->
                 <ul class="header__user-nav">
                     <li class="header__profile">
                         <a class="header__profile-link" href="#">
@@ -71,7 +70,7 @@ $user_name = 'Arman'; // укажите здесь ваше имя
                             </div>
                             <div class="header__profile-name">
                                 <span>
-                                    <?php print($user_name); ?>
+                                    <?=$user_name; ?>
                                 </span>
                                 <svg class="header__link-arrow" width="10" height="6">
                                     <use xlink:href="#icon-arrow-right-ad"></use>
