@@ -109,7 +109,7 @@ $posts = [
                             </div>
                             <div class="header__profile-name">
                                 <span>
-                                    <?= echo($user_name); ?>
+                                    <?= $user_name; ?>
                                 </span>
                                 <svg class="header__link-arrow" width="10" height="6">
                                     <use xlink:href="#icon-arrow-right-ad"></use>
@@ -289,23 +289,24 @@ $posts = [
                 <!--содержимое для поста-текста-->
                 <p><!--здесь текст--></p>
             </div>
-
-            <article class="popular__post post">
+            <?php foreach($posts as $post): ?>                   
+            <article class="popular__post post post-<?= $post['type']; ?>">
                 <header class="post__header">
-                    <h2><!--здесь заголовок--></h2>
+                    <h2><!--здесь заголовок--><?= $post['title']; ?></h2>
                 </header>
                 <div class="post__main">
                     <!--здесь содержимое карточки-->
+                    <?= $post['content']; ?>
                 </div>
                 <footer class="post__footer">
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
                             <div class="post__avatar-wrapper">
                                 <!--укажите путь к файлу аватара-->
-                                <img class="post__author-avatar" src="img/" alt="Аватар пользователя">
+                                <img class="post__author-avatar" src="img/<?= $post['user_img']; ?>" alt="Аватар пользователя">
                             </div>
                             <div class="post__info">
-                                <b class="post__author-name"><!--здесь имя пользоателя--></b>
+                                <b class="post__author-name"><!--здесь имя пользоателя--><?= $post['user_name']; ?></b>
                                 <time class="post__time" datetime="">дата</time>
                             </div>
                         </a>
@@ -333,6 +334,7 @@ $posts = [
                     </div>
                 </footer>
             </article>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
