@@ -3,7 +3,7 @@ $is_auth = rand(0, 1);
 
 $user_name = 'Arman'; // укажите здесь ваше имя
 
-$gifs = [
+$posts = [
     [
         'title' => 'Цитата',
         'type' => 'post_qoute',
