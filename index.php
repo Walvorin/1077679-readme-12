@@ -244,6 +244,7 @@ $posts = [
         </div>
         <div class="popular__posts">
             <div class="visually-hidden" id="donor">
+                <!-- комментарий с работы -->
                 <!--содержимое для поста-цитаты-->
                 <blockquote>
                     <p>
