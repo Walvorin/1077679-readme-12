@@ -269,7 +269,7 @@ $posts = [
                     <?php elseif ($post['type'] === 'post-text'): ?>
                     <!--содержимое для поста-текста-->
                     <p>
-                        <?= $post['content']; ?>
+                        <?= $post['content']; ?> <!-- Тут нужно подправить блок, как? Пока не знаю -->
                     </p>
 
                     <?php elseif ($post['type'] === 'post-photo'): ?>
