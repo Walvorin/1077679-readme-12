@@ -38,6 +38,13 @@ $posts = [
         'content' => 'www.htmlacademy.ru',
         'user_name' => 'Владик',
         'user_img' => 'userpic.jpg'
+    ],
+    [
+        'title' => 'Полезный пост про Байкал',
+        'type' => 'video__block',
+        'content' => 'www.htmlacademy.ru',
+        'user_name' => 'Стасик',
+        'user_img' => 'userpic.jpg'
     ]
 ]
 
@@ -244,22 +251,11 @@ $posts = [
         <div class="popular__posts">
         <!--<div class="visually-hidden" id="donor">
                 содержимое для поста-видео
-                <div class="post-video__block">
-                    <div class="post-video__preview">
-                        <=embed_youtube_cover(/* вставьте ссылку на видео */); ?>
-                        <img src="img/coast-medium.jpg" alt="Превью к видео" width="360" height="188">
-                    </div>
-                    <a href="post-details.html" class="post-video__play-big button">
-                        <svg class="post-video__play-big-icon" width="14" height="14">
-                            <use xlink:href="#icon-video-play-big"></use>
-                        </svg>
-                        <span class="visually-hidden">Запустить проигрыватель</span>
-                    </a>
-                </div>
+                 <=? embed_youtube_cover(/* вставьте ссылку на видео */); ?>
             </div>
                         -->
             <?php foreach($posts as $post): ?>                   
-            <article class="popular__post post <?= $post['type']; ?>">
+            <article class="popular__post post post-<?= $post['type']; ?>">
                 <header class="post__header">
                     <h2><!--здесь заголовок--><?= $post['title']; ?></h2>
                 </header>
@@ -270,7 +266,7 @@ $posts = [
                         <blockquote>
                             <p>
                             <!--здесь текст-->
-                            Мы в жизни любим только раз, а после ищем лишь похожих
+                            <?= $post['content']; ?>
                             </p>
                             <cite><?= $post['user-name']; ?></cite>
                         </blockquote>
@@ -297,9 +293,20 @@ $posts = [
                                 <span><!--здесь ссылка--><?= $post['content']; ?></span>
                             </a>
                         </div>
+                    <?php elseif($post['type'] == 'video__block'): ?>
+                        <div class="post-video__block">
+                            <div class="post-video__preview">
+                                <img src="img/coast-medium.jpg" alt="Превью к видео" width="360" height="188">
+                            </div>
+                            <a href="post-details.html" class="post-video__play-big button">
+                                <svg class="post-video__play-big-icon" width="14" height="14">
+                                <use xlink:href="#icon-video-play-big"></use>
+                                </svg>
+                                <span class="visually-hidden">Запустить проигрыватель</span>
+                            </a>
+                        </div>
                     <?php endif; ?>
                 </div>
-                
                 <footer class="post__footer">
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
