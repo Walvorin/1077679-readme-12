@@ -263,7 +263,7 @@ $posts = [
                         <!--здесь текст-->
                         <?= $post['content']; ?>
                         </p>
-                        <cite>Неизвестный Автор</cite>
+                        <cite>Неизвестный Автор</cite><!-- Комментарий для пуша -->
                     </blockquote>
 
                     <?php elseif ($post['type'] === 'post-text'): ?>
