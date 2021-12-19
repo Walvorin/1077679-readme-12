@@ -249,7 +249,7 @@ $posts = [
             </div>
         </div>
         <div class="popular__posts">
-            <?php foreach ($posts as $post): ?>                   
+            <?php foreach ($posts as $post): ?>
             <article class="popular__post post post-<?= $post['type']; ?>">
                 <header class="post__header">
                     <h2><!--здесь заголовок--><?= $post['title']; ?></h2>
